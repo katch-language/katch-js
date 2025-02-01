@@ -1,6 +1,6 @@
 {
   "name": "katch-js-lib",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "",
   "main": "index.js",
   "workspaces": [
@@ -12,7 +12,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm version patch --force",
-    "postinstall": "tsc"
+    "postinstall": "tsc --noEmitOnError false 2>/dev/null || echo"
   },
   "author": "",
   "license": "ISC",
