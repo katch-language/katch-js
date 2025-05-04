@@ -38,7 +38,7 @@ const glob = require('glob-promise');
    eval = 'import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));' + eval;
 
    child_process.spawn('/usr/bin/env', ['bash', '-c', JSON.stringify(`
-      node ${inspect ? '--inspect --inspect-brk' : ''} node_modules/.bin/ts-node-transpile-only -O '${JSON.stringify({
+      node --trace-exit --trace-warnings --no-opt ${inspect ? '--inspect ' : ''} node_modules/.bin/ts-node-transpile-only -O '${JSON.stringify({
       "target": "ES2022",
    })}' -r tsconfig-paths/register -e ${JSON.stringify(eval)}
    `.trim())], {
