@@ -1,6 +1,6 @@
 {
   "name": "katch-js-lib",
-  "version": "0.0.41",
+  "version": "0.0.47",
   "description": "",
   "main": "index.js",
   "workspaces": [
@@ -11,7 +11,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm version patch --force"
+    "prepublishOnly": "npm version patch --force",
+    "postinstall": "[[ $PWD =~ node_modules ]] && tsc --noEmitOnError false &2>/dev/null || echo"
   },
   "author": "",
   "license": "ISC",
@@ -20,8 +21,10 @@
   },
   "homepage": "https://github.com/katch-language/katch-js#readme",
   "dependencies": {
+    "chokidar": "^4.0.3",
     "glob-promise": "^6.0.7",
     "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0"
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3"
   }
 }
